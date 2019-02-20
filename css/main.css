@@ -1049,9 +1049,6 @@ pre .javascript .function {
 .comments {
   margin: 60px 20px 0;
 }
-a {
-  cursor: pointer !important;
-}
 .tag-cloud {
   text-align: center;
 }
@@ -1943,7 +1940,7 @@ a {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #f7ff4e;
+  background: #da2a61;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3123,4 +3120,7 @@ a {
 }
 :active {
   cursor: url("http://om8u46rmb.bkt.clouddn.com/sword1.ico"), auto !important;
+}
+a {
+  cursor: pointer !important;
 }
