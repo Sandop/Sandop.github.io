@@ -1049,6 +1049,9 @@ pre .javascript .function {
 .comments {
   margin: 60px 20px 0;
 }
+a {
+  cursor: pointer !important;
+}
 .tag-cloud {
   text-align: center;
 }
@@ -1269,6 +1272,7 @@ pre .javascript .function {
   border-bottom: 1px solid #0593d3;
 }
 .post-body p a:hover {
+  cursor: pointer !important;
   color: #fc6423;
   border-bottom: none;
   border-bottom: 1px solid #fc6423;
@@ -1939,7 +1943,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #ffe78e;
+  background: #f7ff4e;
 }
 .links-of-blogroll {
   font-size: 13px;
