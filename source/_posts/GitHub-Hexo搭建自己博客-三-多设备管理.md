@@ -58,18 +58,20 @@ categories: GitHub
 ![07](/assets/images/20190221/07.png)
 
 ### 四、同步到其他电脑
-1. 将新电脑的生成的`ssh key`添加到GitHub账户上
+1. 将新电脑的生成的`ssh key`添加到GitHub账户上；
 
-2. 在新电脑上克隆`username.github.io`仓库的`hexo`分支到本地，此时本地git仓库处于hexo分支
+2. 在新电脑上克隆`username.github.io`仓库的`hexo`分支到本地，此时本地git仓库处于hexo分支；
 
-3. 切换到`username.github.io`目录，执行`npm install`(由于仓库有一个.gitignore文件，里面默认是忽略掉 node_modules文件夹的，也就是说仓库的hexo分支并没有存储该目录，所以需要install下)
+3. 切换到`username.github.io`目录，执行`npm install`(由于仓库有一个.gitignore文件，里面默认是忽略掉 node_modules文件夹的，也就是说仓库的hexo分支并没有存储该目录，所以需要install下)；
 
-4. 到这里了就可以开始在自己的新电脑上写博客了！
+4. 在新电脑上安装hexo命令,`npm install -g hexo`；
 
->编辑、撰写文章或其他博客更新改动
+5. 到这里了就可以开始在自己的新电脑上写博客了！
 
->依次执行`git add .`、`git commit -m '***'（引号内容可改）`、`git push`指令，保证xxx分支版本最新
+    >5.1 编辑、撰写文章或其他博客更新改动
 
->执行`hexo clean && hexo g && hexo d`指令，完成后就会发现，最新改动已经更新到master分支了，两个分支互不干扰！
+    >5.2 依次执行`git add .`、`git commit -m '***'（引号内容为描述提交内容）`、`git push`指令，保证xxx分支版本最新
 
-5. 每次换电脑更新博客的时候, 在修改之前最好也要`git pull`拉取一下最新的更新
+    >5.3 执行`hexo clean && hexo g && hexo d`指令，完成后就会发现，最新改动已经更新到master分支了，两个分支互不干扰！
+
+6. **每次换电脑更新博客的时候, 在修改之前最好也要`git pull`拉取一下最新的更新**
