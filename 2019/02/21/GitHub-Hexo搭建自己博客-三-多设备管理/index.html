@@ -113,7 +113,7 @@
 <meta property="og:image" content="https://sandop.github.io/assets/images/20190221/05.png">
 <meta property="og:image" content="https://sandop.github.io/assets/images/20190221/06.png">
 <meta property="og:image" content="https://sandop.github.io/assets/images/20190221/07.png">
-<meta property="og:updated_time" content="2019-02-21T07:28:45.897Z">
+<meta property="og:updated_time" content="2019-02-21T07:38:21.577Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="GitHub + Hexo搭建自己博客(三) 多设备管理">
 <meta name="twitter:description" content="介绍：正常情况下, 我们博客的相关配置信息都是在本地的, 并未上传服务器, 这样当我们想在其他设备, 比如公司的电脑或者原电脑重装了系统, 那么我们便无法再维护我们的博客了 一、环境配置安装Node.js安装git安装hexo 二、创建分支 hexo生成的静态博客文件都是上传到GitHub上的, 且默认放在master分支上, 而一些相关的配置文件都在本地   hexo的源文件（部署环境文件）可以">
@@ -423,7 +423,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  964
+                  977
                 </span>
               
 
@@ -471,7 +471,7 @@
 </blockquote>
 <h4 id="1、仓库新建hexo分支"><a href="#1、仓库新建hexo分支" class="headerlink" title="1、仓库新建hexo分支"></a>1、仓库新建hexo分支</h4><p>在Github的username.github.io仓库上新建一个hexo(分支名字可自定义)分支, 在下图箭头位置输入分支名字,完成创建；<br><img src="/assets/images/20190221/01.png" alt="01"></p>
 <h4 id="2、设置默认分支"><a href="#2、设置默认分支" class="headerlink" title="2、设置默认分支"></a>2、设置默认分支</h4><p>切换到该<code>hexo分支</code>，并在<code>该仓库-&gt;Settings-&gt;Branches-&gt;Default branch</code>中将默认分支设为<code>hexo</code>,然后点击<code>update</code>进行保存；<br><img src="/assets/images/20190221/02.png" alt="02"></p>
-<h3 id="三、配置文件上传Github"><a href="#三、配置文件上传Github" class="headerlink" title="三、配置文件上传Github"></a>三、配置文件上传Github</h3><p>该步骤需要在博客配置文件和主题配置文件所在的电脑上操作</p>
+<h3 id="三、配置文件上传Github"><a href="#三、配置文件上传Github" class="headerlink" title="三、配置文件上传Github"></a>三、配置文件上传Github</h3><p>该步骤需要在博客配置文件和主题配置文件所在的电脑上操作，想了解git相关命令，<a href="https://github.com/Sandop/Git-Command" target="_blank" rel="noopener">请移步这里</a></p>
 <h4 id="1-克隆hexo分支"><a href="#1-克隆hexo分支" class="headerlink" title="1.克隆hexo分支"></a>1.克隆hexo分支</h4><p>1.1 在合适位置将上述新建的hexo分支克隆到本地, <code>git clone git@github.com:Sandop/Sandop.github.io.git</code>，克隆地址换成自己的地址；<br>1.2 在终端中cd进入该username.github.io文件目录,<code>cd username.github.io</code>；<br>1.3 在当前目录使用Git Bash执行<code>git branch</code>命令查看当前所在分支，应为新建的分支hexo<br><img src="/assets/images/20190221/03.png" alt="03"></p>
 <h4 id="2-上传部署文件"><a href="#2-上传部署文件" class="headerlink" title="2.上传部署文件"></a>2.上传部署文件</h4><p>2.1 先将本地博客的部署文件（Hexo博客项目目录下的全部文件）全部拷贝进<code>username.github.io</code>文件目录中去</p>
 <p>2.2 准备将所有的文件都提交到hexo分支，提交时考虑以下注意事项：</p>
