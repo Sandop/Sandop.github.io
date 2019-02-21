@@ -113,7 +113,7 @@
 <meta property="og:image" content="https://sandop.github.io/assets/images/20190221/05.png">
 <meta property="og:image" content="https://sandop.github.io/assets/images/20190221/06.png">
 <meta property="og:image" content="https://sandop.github.io/assets/images/20190221/07.png">
-<meta property="og:updated_time" content="2019-02-21T07:38:21.577Z">
+<meta property="og:updated_time" content="2019-02-21T07:44:15.799Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="GitHub + Hexo搭建自己博客(三) 多设备管理">
 <meta name="twitter:description" content="介绍：正常情况下, 我们博客的相关配置信息都是在本地的, 并未上传服务器, 这样当我们想在其他设备, 比如公司的电脑或者原电脑重装了系统, 那么我们便无法再维护我们的博客了 一、环境配置安装Node.js安装git安装hexo 二、创建分支 hexo生成的静态博客文件都是上传到GitHub上的, 且默认放在master分支上, 而一些相关的配置文件都在本地   hexo的源文件（部署环境文件）可以">
@@ -423,7 +423,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  977
+                  1k
                 </span>
               
 
@@ -486,26 +486,27 @@
 <p>2.4 <code>master</code>分支和<code>hexo</code>分支各自保存着一个版本。<code>master分支</code>用于保存博客静态资源，提供博客页面供人访问；<code>hexo分支</code>用于备份博客部署文件，供自己维护更新，两者在一个GitHub仓库内也不会有任何冲突</p>
 <p><img src="/assets/images/20190221/06.png" alt="06"><br><img src="/assets/images/20190221/07.png" alt="07"></p>
 <h3 id="四、同步到其他电脑"><a href="#四、同步到其他电脑" class="headerlink" title="四、同步到其他电脑"></a>四、同步到其他电脑</h3><ol>
-<li><p>将新电脑的生成的<code>ssh key</code>添加到GitHub账户上</p>
+<li><p>将新电脑的生成的<code>ssh key</code>添加到GitHub账户上；</p>
 </li>
-<li><p>在新电脑上克隆<code>username.github.io</code>仓库的<code>hexo</code>分支到本地，此时本地git仓库处于hexo分支</p>
+<li><p>在新电脑上克隆<code>username.github.io</code>仓库的<code>hexo</code>分支到本地，此时本地git仓库处于hexo分支；</p>
 </li>
-<li><p>切换到<code>username.github.io</code>目录，执行<code>npm install</code>(由于仓库有一个.gitignore文件，里面默认是忽略掉 node_modules文件夹的，也就是说仓库的hexo分支并没有存储该目录，所以需要install下)</p>
+<li><p>切换到<code>username.github.io</code>目录，执行<code>npm install</code>(由于仓库有一个.gitignore文件，里面默认是忽略掉 node_modules文件夹的，也就是说仓库的hexo分支并没有存储该目录，所以需要install下)；</p>
+</li>
+<li><p>在新电脑上安装hexo命令,<code>npm install -g hexo</code>；</p>
 </li>
 <li><p>到这里了就可以开始在自己的新电脑上写博客了！</p>
+<blockquote>
+<p>5.1 编辑、撰写文章或其他博客更新改动</p>
+</blockquote>
+<blockquote>
+<p>5.2 依次执行<code>git add .</code>、<code>git commit -m &#39;***&#39;（引号内容为描述提交内容）</code>、<code>git push</code>指令，保证xxx分支版本最新</p>
+</blockquote>
+<blockquote>
+<p>5.3 执行<code>hexo clean &amp;&amp; hexo g &amp;&amp; hexo d</code>指令，完成后就会发现，最新改动已经更新到master分支了，两个分支互不干扰！</p>
+</blockquote>
 </li>
-</ol>
-<blockquote>
-<p>编辑、撰写文章或其他博客更新改动</p>
-</blockquote>
-<blockquote>
-<p>依次执行<code>git add .</code>、<code>git commit -m &#39;***&#39;（引号内容可改）</code>、<code>git push</code>指令，保证xxx分支版本最新</p>
-</blockquote>
-<blockquote>
-<p>执行<code>hexo clean &amp;&amp; hexo g &amp;&amp; hexo d</code>指令，完成后就会发现，最新改动已经更新到master分支了，两个分支互不干扰！</p>
-</blockquote>
-<ol start="5">
-<li>每次换电脑更新博客的时候, 在修改之前最好也要<code>git pull</code>拉取一下最新的更新</li>
+<li><p><strong>每次换电脑更新博客的时候, 在修改之前最好也要<code>git pull</code>拉取一下最新的更新</strong></p>
+</li>
 </ol>
 
       
