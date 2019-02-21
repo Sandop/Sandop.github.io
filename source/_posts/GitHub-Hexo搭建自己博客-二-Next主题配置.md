@@ -625,7 +625,7 @@ passage_end_tag:
 想要更改颜色和数量？修改文件：`/themes/next/source/lib/canvas-nest/canvas-nest.min.js`,[修改参考](https://github.com/hustcc/canvas-nest.js/blob/master/README-zh.md)
 
 ### 21、修改内容区域的宽度
-编辑主题的 source/css/_variables/custom.styl 文件，新增变量：
+1. 编辑主题的 source/css/_variables/custom.styl 文件，新增变量：
 ```
 // 修改成你期望的宽度
 $content-desktop = 700px
@@ -633,7 +633,13 @@ $content-desktop = 700px
 // 当视窗超过 1600px 后的宽度
 $content-desktop-large = 900px
 ```
-
+2. 但是此方法不适用于 Pisces Scheme，对于 Pisces Scheme，需要同时修改 `header` 的宽度、`.main-inner` 的宽度以及 `.content-wrap` 的宽度。例如，使用百分比（Pisces 的布局定义在 `source/css/_schemes/Picses/_layout.styl` 中）
+```css
+.header{ width: 60%; }
+.container .main-inner { width: 60%; }
+.content-wrap { width: calc(100% - 260px); }
+```
+  > 超过一定宽度后（一行内文字太多导致换行跨度太大），阅读体验不好，我调整的宽度为60%，各位可以自行测试进行调整
 ### 22、打赏功能
 
 1.准备支付宝和微信二维码，存放在`themes/*/source/images`
@@ -739,3 +745,36 @@ permalink: /404
 </html>
 ```
 5.将`返回首页`的链接更改为自己的链接。
+
+### 27、网页代码压缩
+
+网上有很多相关的博文，常规的做法是使用gulp来进行压缩，但是没有成功，所以更换为`hexo-neat`压缩插件进行。
+
+1.站点根目录下安装插件`npm install hexo-neat --save`；
+2.修改**站点配置文件**，在末尾添加以下代码；
+```
+# hexo-neat
+# 博文压缩
+neat_enable: true
+# 压缩html
+neat_html:
+  enable: true
+  exclude:
+# 压缩css  
+neat_css:
+  enable: true
+  exclude:
+    - '**/*.min.css'
+# 压缩js
+neat_js:
+  enable: true
+  mangle: true
+  output:
+  compress:
+  exclude:
+    - '**/*.min.js'
+    - '**/jquery.fancybox.pack.js'
+    - '**/index.js'
+
+```
+3.执行`hexo clean && hexo g && hexo s`查看效果。
