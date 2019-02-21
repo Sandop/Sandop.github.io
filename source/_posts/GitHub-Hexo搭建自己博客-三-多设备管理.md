@@ -31,7 +31,7 @@ categories: GitHub
 
 ### 三、配置文件上传Github
 
-该步骤需要在博客配置文件和主题配置文件所在的电脑上操作
+该步骤需要在博客配置文件和主题配置文件所在的电脑上操作，想了解git相关命令，[请移步这里](https://github.com/Sandop/Git-Command)
 
 #### 1.克隆hexo分支
 1.1 在合适位置将上述新建的hexo分支克隆到本地, `git clone git@github.com:Sandop/Sandop.github.io.git`，克隆地址换成自己的地址；
