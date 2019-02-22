@@ -223,7 +223,7 @@ social_icons:
   微博: weibo
 ```
 ### 9、显示当前浏览进度
-**主题配置文件** 即`themes/*/_config.yml`中的`b2t`（返回顶部）及`scrollpercent`（浏览百分数）
+**主题配置文件** 即`themes/*/_config.yml`中`scrollpercent`更改为`true`,`b2t`改为`true`返回顶部及浏览进度显示在左侧`sidebar`之下，改为`false`显示在右下角
 ![12](/assets/images/20190219/12.png)
 
 
