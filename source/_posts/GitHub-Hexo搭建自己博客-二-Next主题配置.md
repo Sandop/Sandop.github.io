@@ -31,13 +31,15 @@ timezone:
 ![01](/assets/images/20190219/01.png)
 
 ### 2、头像设置
-#### 2.1 设置头像
+
+2.1 设置头像
 在**站点配置文件** 中新增avatar，值设置为头像的链接地址。地址可以是网络地址，也可以是本地地址（放置在source/images/ 目录下）
 ```
 #侧边栏头像设置
 avatar: /images/user.jpg
 ```
-#### 2.2 头像旋转动画
+
+2.2 头像旋转动画
 打开\themes\next\source\css\_common\components\sidebar\sidebar-author.styl，在里面添加如下代码：
 ``` css
 .site-author-image {
@@ -289,9 +291,9 @@ live2d:
 
 ### 2、实现fork me on github
 
-#### 2.1、点击 [这里](https://github.blog/2008-12-19-github-ribbons/) 挑选自己喜欢的样式，并复制代码
-#### 2.2、然后粘贴刚才复制的代码到themes/next/layout/_layout.swig文件中(放在`<div class="headband"></div>`的下面)，并把href改为你的github地址 
-#### 2.3、若位置不对，在 img 标签中修改 `  style="position:fixed;top:0;right:0" `
+ 2.1、点击 [这里](https://github.blog/2008-12-19-github-ribbons/) 挑选自己喜欢的样式，并复制代码
+ 2.2、然后粘贴刚才复制的代码到`themes/*/layout/_layout.swig`文件中(放在`<div class="headband"></div>`的下面)，并把href改为你的github地址 
+ 2.3、若位置不对，在 img 标签中修改 `  style="position:fixed;top:0;right:0" `
 
 ![06](/assets/images/20190219/06.png)
 
@@ -364,11 +366,11 @@ leancloud_visitors:
 
 ### 9、文章置顶
 
-#### 9.1 安装插件
+ 9.1 安装插件
 >`npm uninstall hexo-generator-index --save`
 >`npm install hexo-generator-index-pin-top --save`
 
-#### 9.2 在需要置顶的文章中加上top即可，数值越大文章越靠前
+ 9.2 在需要置顶的文章中加上top即可，数值越大文章越靠前
 
 ```
 ---
@@ -379,7 +381,7 @@ categories: blog,hexo,next
 top: 10
 ---
 ```
-#### 9.3 设置置顶标志
+ 9.3 设置置顶标志
 
 打开：/themes/*/layout/_macro/post.swig，定位到`<div class="post-meta">`标签下，插入如下代码：
 ```html
@@ -640,6 +642,7 @@ $content-desktop-large = 900px
 .content-wrap { width: calc(100% - 260px); }
 ```
   > 超过一定宽度后（一行内文字太多导致换行跨度太大），阅读体验不好，我调整的宽度为60%，各位可以自行测试进行调整
+
 ### 22、打赏功能
 
 1.准备支付宝和微信二维码，存放在`themes/*/source/images`
