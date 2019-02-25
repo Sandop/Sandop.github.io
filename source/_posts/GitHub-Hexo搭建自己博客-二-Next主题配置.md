@@ -16,7 +16,7 @@ top: 10
 
 在**站点配置文件** 即博客根目录下的`_config.yml`中
 
-```
+```yml
 
 # Site
 title: Sando博客       
@@ -34,7 +34,7 @@ timezone:
 
 2.1 设置头像
 在**站点配置文件** 中新增avatar，值设置为头像的链接地址。地址可以是网络地址，也可以是本地地址（放置在source/images/ 目录下）
-```
+```yml
 #侧边栏头像设置
 avatar: /images/user.jpg
 ```
@@ -108,7 +108,7 @@ img:hover {
 
 在**主题配置文件**即在next主题目录下的_config.yml文件中将scheme设定为Pisces,可根据个人喜好设置成其他的值
 
-```
+```yml
 # Schemes
 #scheme: Muse
 #scheme: Mist
@@ -120,7 +120,7 @@ scheme: Pisces
 在**主题配置文件**中的menu中设置，增添一个movies
 注：千万不要在这设置中文，后面的值那是查找文件的地方！
 如下
-```
+```yml
 menu:
   home: / || home
   about: /about/ || user
@@ -136,7 +136,7 @@ menu:
 
 这些配置都要与你主题目录下的languages文件中对应的yml文档里配置相关联。
 比如你在站点根目录中的配置文件设置language为zh-Hans，那么就要进入到主题目录下的languages文件中修改zh-Hans.yml，这样才能显示出菜单项新增的中文内容
-```
+```yml
 menu:
   home: 首页
   archives: 归档
@@ -153,7 +153,7 @@ menu:
 
 ### 5、菜单项图标设置
 在**主题配置文件**中对应的字段是menu_icons。格式为item name：icon name，其中item name与所配置的菜单名字对应，icon name是Font Awesome图标的名字。而 enable 可用于控制是否显示图标，你可以设置成 false 来去掉图标。
-```
+```yml
 menu_icons:
   enable: true
   home: home
@@ -171,7 +171,7 @@ menu_icons:
 ### 6、侧栏位置设置
 
 在**主题配置文件**中修改主题目录下sidebar的position值
-```
+```yml
 sidebar:
   # Sidebar Position, available value: left | right (only for Pisces | Gemini).
   position: left
@@ -201,7 +201,7 @@ type: "tags"
 侧栏社交链接的修改包含两个部分，第一是链接，第二是链接图标。 两者配置均在 **主题配置文件** 中
 
 （1）链接放置在 social 字段下，一行一个链接。其键值格式是 显示文本: 链接地址。
-```
+```yml
 # Social links
 social:
   GitHub: https://github.com/your-user-name
@@ -213,7 +213,7 @@ social:
 ```
 （2）设定链接的图标，对应的字段是 social_icons。其键值格式是 匹配键: Font Awesome 图标名称， 匹配键 与上一步所配置的链接的 显示文本 相同（大小写严格匹配），图标名称 是 Font Awesome 图标的名字（不必带 fa- 前缀）。 enable 选项用于控制是否显示图标，你可以设置成 false 来去掉图标。
 其中seoial_icons节点中后面的值是http://fontawesome.io/icons/ 中提供的图标的名称。之后其他链接如推特，微博等都可自行增减。
-```
+```yml
 # Social Icons
 social_icons:
   enable: true
@@ -240,7 +240,7 @@ social_icons:
 #### 1.2、配置
 请向根目录的 _config.yml 文件或主题的 _config.yml 文件中添加配置.
 
-```
+```yml
 
 live2d:
   enable: true
@@ -331,7 +331,7 @@ live2d:
 ![21](/assets/images/20190219/21.png)
 4.打开设置 -> 应用key 获取`App ID`和`App Key`;
 5.最后打开**主题配置文件**: `themes/*/_config.yml`;
-```
+```yml
 leancloud_visitors:
   enable: true
   app_id: #你的app_id
@@ -397,14 +397,36 @@ top: 10
 ![14](/assets/images/20190219/14.png)
 
 ### 10、隐藏网页底部powered By Hexo / 强力驱动
-打开themes/next/layout/_partials/footer.swig,使用`<!-- -->`隐藏之间的代码即可，或者直接删除。位置如图：
+第一种方法：在**主题配置文件**中，找到`footer`,配置如下：
+```yml
+footer:
+  # Specify the date when the site was setup.
+  # If not defined, current year will be used.
+  #since: 2015
+
+  # Icon between year and copyright info.
+  icon: heart
+
+  # If not defined, will be used `author` from Hexo main config.
+  copyright: Sando
+  # -------------------------------------------------------------
+  # Hexo link (Powered by Hexo).
+  powered: false
+
+  theme:
+    # Theme & scheme info link (Theme - NexT.scheme).
+    enable: false
+    # Version info of NexT after scheme info (vX.X.X).
+    version: false
+```
+第二种方法：打开themes/next/layout/_partials/footer.swig,使用`<!-- -->`隐藏之间的代码即可，或者直接删除。位置如图：
 ![15](/assets/images/20190219/15.png)
 
 ### 11、实现统计功能
 
 1.在根目录下安装 hexo-wordcount,运行：`npm install hexo-wordcount --save`
 2.然后在**主题配置文件**中，配置如下：
-```
+```yml
 # Post wordcount display settings
 # Dependencies: https://github.com/willin/hexo-wordcount
 post_wordcount:
@@ -439,13 +461,13 @@ post_wordcount:
 1.站点根目录下安装插件，`npm install --save hexo-generator-feed`;
 2.在**站点配置文件**_config.yml中，添加如下内容：
 
-```
+```yml
 # Extensions
 ## Plugins: http://hexo.io/plugins/
 plugins: hexo-generate-feed
 ```
 3.然后再**主题配置文件**中配置`rss`;
-```
+```yml
 rss: /atom.xml
 ```
 4.配置完之后运行：`hexo clean && hexo g && hexo s`;
@@ -600,7 +622,7 @@ rss: /atom.xml
 
 
 3.打开**主题配置文件**（_config.yml),在末尾添加：
-```
+```yml
 # 文章末尾添加“本文结束”标记
 passage_end_tag:
   enabled: true
@@ -610,7 +632,7 @@ passage_end_tag:
 
 ### 19、自定义鼠标样式
 打开 `themes/*/source/css/_custom/custom.styl` ,在里面写下如下代码：
-```
+```css
 // 鼠标样式
   * {
       cursor: url("http://om8u46rmb.bkt.clouddn.com/sword2.ico"),auto!important
@@ -628,7 +650,7 @@ passage_end_tag:
 
 ### 21、修改内容区域的宽度
 1. 编辑主题的 source/css/_variables/custom.styl 文件，新增变量：
-```
+```css
 // 修改成你期望的宽度
 $content-desktop = 700px
 
@@ -647,7 +669,7 @@ $content-desktop-large = 900px
 
 1.准备支付宝和微信二维码，存放在`themes/*/source/images`
 2.在**主题配置文件**（_config.yml）中进行设置
-```
+```yml
 # Reward
 reward_comment: 谢谢请我吃辣条！
 wechatpay: /images/wechatpay.png
@@ -660,7 +682,7 @@ alipay: /images/alipay.jpg
 1.Valine 是一款基于Leancloud的快速、简洁且高效的无后端评论系统；
 2.获取Leancloud的APP ID和 APP KEY, 上面第六步设置中已经介绍了获取方法；
 3.打开**主题配置文件**: `themes/*/_config.yml`;
-```
+```yml
 # Valine.
 # You can get your appid and appkey from https://leancloud.cn
 # more info please open https://valine.js.org
@@ -682,7 +704,7 @@ valine:
 1.在根目录下安装`hexo-generator-searchdb`插件，`npm install hexo-generator-searchdb --save
 `;
 2.**站点配置文件**中添加以下字段
-```
+```yml
 search:
   path: search.xml
   field: post
@@ -690,7 +712,7 @@ search:
   limit: 10000
 ```
 3.编辑**主题配置文件**启用本地搜索
-```
+```yml
 # Local search
 local_search:
   enable: true
@@ -698,7 +720,7 @@ local_search:
 ### 25、不蒜子访问统计
 
 1.编辑 **主题配置文件** `themes/*/_config.yml`中的`busuanzi_count`的配置项即可;
-```
+```yml
 busuanzi_count:
   # count values only if the other configs are false
   enable: true
@@ -755,7 +777,7 @@ permalink: /404
 
 1.站点根目录下安装插件`npm install hexo-neat --save`；
 2.修改**站点配置文件**，在末尾添加以下代码；
-```
+```yml
 # hexo-neat
 # 博文压缩
 neat_enable: true
@@ -781,3 +803,32 @@ neat_js:
 
 ```
 3.执行`hexo clean && hexo g && hexo s`查看效果。
+
+### 28、添加网站底部跳动的心
+
+1.在**主题配置文件**中（`themes/*/_config.yml`）,更改`footer`;
+```yml
+footer:
+  icon: heart
+```
+2.编辑标签,在`/themes/*/layout/_partials/footer.swig`中，`span`中增加`id="heart"`;
+```html
+ <span class="with-love" id="heart">
+```
+
+3.编辑css,在`themes/*/source/css/_custom/custom.styl`中更改样式如下：
+```css
+// 自定义页脚跳动的心样式
+@keyframes heartAnimate {
+    0%,100%{transform:scale(1);}
+    10%,30%{transform:scale(0.9);}
+    20%,40%,60%,80%{transform:scale(1.1);}
+    50%,70%{transform:scale(1.1);}
+}
+#heart {
+    animation: heartAnimate 1.33s ease-in-out infinite;
+}
+.with-love {
+    color: rgb(255, 113, 168);
+}
+```

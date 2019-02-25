@@ -88,7 +88,7 @@ categories: hexo
 ### 4、配置Deployment
 
 在博客的根目录文件夹中，找到_config.yml文件
-```
+```yml
 deploy:
   type: git
   repository: git@github.com:Sandop/Sandop.github.io.git
